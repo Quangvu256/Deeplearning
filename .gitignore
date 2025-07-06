@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pth
+.venv/
+
+# Node.js
+webdeep-frontend/node_modules/
+
+# VSCode, IDE...
+.vscode/
+.idea/
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db
