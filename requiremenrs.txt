@@ -10,3 +10,4 @@ flask
 flask-cors
 opencv-python
 torchsummary
+gunicorn
