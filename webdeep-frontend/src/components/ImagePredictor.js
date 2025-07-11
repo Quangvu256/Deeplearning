@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../sakura-styles.css";
 import { Link } from 'react-router-dom';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const ImagePredictor = () => {
   const [image, setImage] = useState(null);
@@ -94,10 +95,10 @@ const ImagePredictor = () => {
       // Thêm độ trễ giả để làm cho hiệu ứng xử lý tốt hơn
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      const response = await fetch("http://127.0.0.1:5000/predict", {
+      const response = await fetch(`${API_URL}/predict`, {
         method: "POST",
         body: formData,
-      });
+      });;
 
       const textResponse = await response.text();
       console.log("[LOG] Raw response từ Flask:", textResponse);
