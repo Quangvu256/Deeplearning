@@ -43,6 +43,6 @@ Nhấn 2 lần vào file: run_web.bat
 Frontend React chạy ở: http://localhost:3000
 
 Backend Flask API chạy ở: http://localhost:5000
-Hoặc có thể demo qua web : https://deeplearning2.onrender.com
+Hoặc có thể demo giao diện qua web : https://deeplearning2.onrender.com
 
 
