@@ -26,6 +26,9 @@ PUBLIC/
 └── WEBDEEP.py               # Flask backend chính
 
 ---
+https://drive.google.com/drive/folders/1Y1ZMAEzMCuGq_ykYdILkcWnvc3wtPl1j?usp=sharing
+link chứa file load model
+---
 ## Clone đầy đủ repo (bao gồm file mô hình lớn)
 
 ```bash
