@@ -26,6 +26,14 @@ PUBLIC/
 └── WEBDEEP.py               # Flask backend chính
 
 ---
+## Clone đầy đủ repo (bao gồm file mô hình lớn)
+
+```bash
+# Bước 1: Cài Git LFS (chỉ cần 1 lần)
+git lfs install
+
+# Bước 2: Clone repo
+git clone https://github.com/Quangvu256/Deeplearning.git
 
 ## ✅ Yêu cầu hệ thống
 - Python >= 3.8
