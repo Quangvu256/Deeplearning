@@ -1,7 +1,13 @@
+numpy
+pandas
 torch
 torchvision
-Flask
+tqdm
+matplotlib
+Pillow
+scikit-learn
+flask
 flask-cors
 opencv-python
-numpy
-Pillow
+torchsummary
+gunicorn
