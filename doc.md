@@ -1,4 +1,3 @@
-
 # Quizzez Console MCP Server
 
 A [Model Context Protocol (MCP)](https://spec.modelcontextprotocol.io) server
@@ -214,17 +213,20 @@ Config file locations:
 
 ### LM Studio
 
-LM Studio supports MCP servers when **Developer Mode** is enabled and a **tool-capable model**
-is loaded (e.g., Llama-3-Instruct, Qwen-2.5-Instruct).
+LM Studio supports MCP servers via its built-in **Developer** tab. A **tool-capable model**
+is required (e.g., Llama-3-Instruct, Qwen-2.5-Instruct).
 
-**Step 1 — Enable Developer Mode**
+**Step 1 — Open the Developer tab**
 
-Open LM Studio → **Settings** (gear icon) → **Developer** → toggle **Developer Mode** on.
+Press `Ctrl + 2`, or click the **Developer** icon on the left sidebar (terminal `>_` icon).
 
-**Step 2 — Add the MCP server**
+**Step 2 — Edit `mcp.json`**
 
-Locate the MCP configuration section in LM Studio (often under a "Tools" tab),
-or edit the `mcp.json` file at `C:\Users\<YOUR_USERNAME>\.lmstudio\`.
+At the top of the Developer panel, click the **[ mcp.json ]** button to open the
+MCP configuration file directly in LM Studio. Add the following block:
+
+> **Important:** Replace `<YOUR_USERNAME>` and `<PATH_TO_YOUR_PROJECT>` with your actual paths.
+> Use forward slashes (`/`) to prevent JSON escape errors.
 
 **Linux / macOS:**
 ```json
@@ -260,18 +262,26 @@ or edit the `mcp.json` file at `C:\Users\<YOUR_USERNAME>\.lmstudio\`.
 }
 ```
 
-> **Note:** Use forward slashes (`/`) in JSON paths on Windows.
+Save the file. The server status should appear as **running/enabled** in the Developer panel.
 
 **Step 3 — Load a tool-capable model**
 
 General conversational models will not trigger MCP tools. Use a model tagged
 **Instruct** or **Tool-use** (e.g., `Llama-3-8B-Instruct`, `Qwen-2.5-7B-Instruct`).
+Load the model using the blue **+ Load Model** button in the Developer tab.
 
-**Quick test** — Open a chat in LM Studio and try:
+**Testing the integration**
+
+Open a chat in LM Studio and try a natural-language prompt:
 
 > "List all available console commands in the admin category for the Quizzez app."
 
-LM Studio should invoke the `list_commands` tool and return the result.
+Behind the scenes:
+1. LM Studio parses your request.
+2. It triggers the `list_commands` tool via the MCP server.
+3. The Python server executes the ADB broadcast.
+4. The Android app processes the command and returns the data.
+5. LM Studio formats the response for you.
 
 ---
 
